@@ -12,9 +12,7 @@ function deObjetoAmatriz(objeto){
   //Escribe tu código aquí
 
 
-  return Object.keys(objeto).map(function(key){
-    return [key,objeto[key]];
-}) 
+  return Object.entries(objeto) 
 }
 
 function numberOfCharacters(string) {
@@ -25,12 +23,13 @@ function numberOfCharacters(string) {
 
 }
 
-
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+
+
 }
 
 
@@ -39,8 +38,19 @@ function asAmirror(str) {
   //Escribe una función que tome la frase recibida y la devuelva de modo tal que se pueda leer de izquierda a derecha 
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
-  //Escribe tu código aquí
-} 
+  //Escribe tu código aquí:
+var nuevostr = "";
+for (let i = str.length-1 ; i>=0 ; i--){
+  nuevostr = nuevostr + str.charAt(i)
+}
+return nuevostr.split(" ").reverse().join(" ");
+}
+
+// str "Hola que tal"
+// "lat euq aloH" 
+// ["lat" , "euq" , "aloH"]
+// ["aloH", "euq", "lat"]
+// "aloH euq lat"
 
 
 function capicua(numero){

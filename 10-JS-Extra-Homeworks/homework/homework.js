@@ -21,14 +21,22 @@ function numberOfCharacters(string) {
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
 
+  var strarr = string.toLowerCase().split("");
+  strarr.forEach((letra) => {
+    repeticiones[letra] = (repeticiones[letra] || 0 ) + 1;
+  });
+
+  return Object.assign({},strarr)
 }
+
+
 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
-
+s.sortOf((a,b))
 
 }
 
@@ -58,6 +66,12 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+var numerostr = "" + numero
+var nuevostr = ""
+for (let i = numerostr.length -1 ; i >= 0 ; i--) {
+  nuevostr = nuevostr + numerostr[i]
+}if(numerostr === nuevostr) return "Es capicua"
+return "No es capicua"
 }
 
 
@@ -65,13 +79,19 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-}
 
+  return cadena.replaceAll("a", "").replaceAll("b", "").replaceAll("c", "");
+
+}
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+
+var nuevoarr = arr.slice().sort((a,b) => a.length - b.length)
+
+return nuevoarr
 }
 
 
@@ -81,6 +101,11 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+
+  // arr1 = [1,2,3,4,9] y arr2 = [3,7,8,1,2] 
+
+
+
 }
 
 

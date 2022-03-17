@@ -11,7 +11,6 @@ function deObjetoAmatriz(objeto){
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
 
-
   return Object.entries(objeto) 
 }
 
@@ -21,12 +20,15 @@ function numberOfCharacters(string) {
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
 
-  var strarr = string.toLowerCase().split("");
-  strarr.forEach((letra) => {
-    repeticiones[letra] = (repeticiones[letra] || 0 ) + 1;
-  });
-
-  return Object.assign({},strarr)
+ let letterAmount = {} 
+for (let i = 0; i < string.length; i++) {
+  let letter = string[i];
+  if(letterAmount[letter] !== undefined) {  
+  letterAmount[letter]++
+} else {letterAmount[letter] = 1
+}
+}
+return letterAmount
 }
 
 
@@ -36,9 +38,15 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
-s.sortOf((a,b))
 
+// "soyHENRY" 
+
+var mayusArr = s.match(/[A-Z]/g).join("") // "HENRY"
+var minusArr = s.match(/[a-z]/g).join("") //"soy"
+return mayusArr + minusArr 
 }
+
+
 
 
 function asAmirror(str) {
@@ -102,11 +110,17 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
 
-  // arr1 = [1,2,3,4,9] y arr2 = [3,7,8,1,2] 
+  // arr1 = [1,2,3,4,9] y arr2 = [3,7,8,1,2] => [1,2,3]
 
+var nuevoArr = []
 
+  for (let i = 0; i < arreglo1.length; i++) {
+    let numero1 = arreglo1[i]
+   if(arreglo2.includes(numero1)) nuevoArr.push(numero1)
+    }
+  return nuevoArr
+  }
 
-}
 
 
 

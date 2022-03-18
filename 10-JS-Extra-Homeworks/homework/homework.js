@@ -119,10 +119,15 @@ var nuevoArr = []
    if(arreglo2.includes(numero1)) nuevoArr.push(numero1)
     }
   return nuevoArr
-  }
+  
 
-
-
+// otra opcion 
+let nuevoArr = []
+for(let numero of arreglo1){
+  if(arreglo2.includes(numero)) nuevoArr.push(numero)
+} 
+return nuevoArr
+}
 
 // No modificar nada debajo de esta línea
 // --------------------------------

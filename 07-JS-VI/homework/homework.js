@@ -33,6 +33,12 @@ function sumarArray(numeros, cb) {
   }
   return cb(suma);
 }
+// Segunda opcion
+var sumaTotal = numeros.reduce(function(acc, curr) {
+  return acc + curr;
+},0);
+cb(sumaTotal);
+
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
